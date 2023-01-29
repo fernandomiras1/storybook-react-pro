@@ -2,45 +2,44 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Paquetes Instalados FMiras
 
-In the project directory, you can run:
+Te permite borrar folder desde NPM Script, por ejemplo podemos usar el comando rm -rf
 
-### `yarn start`
+### `yarn add -D rimraf`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Te permite copiar folder desde NPM Script
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### `yarn add -D copyfiles`
 
-### `yarn test`
+Copiamos todos los archivos de CSS a nuestro dist
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `"copy-files": "copyfiles -u 1 src/**/*.css dist/"`
 
-### `yarn build`
+peerDependencies ( le decimos que lib tiene que tener para que nuestro paquete funcione )
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Automatizar los commit para que hagan release automaticos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Si en el commit escribimos
+--fix: Enteonces es un bug y me incrementa a un pacht ( ultimo nro )
+--fear: Enteonces es un feature y me incrementa a un Minor ( el nro del medio )
+--perf : Enteonces es un cambio muy importante en al app y me incrementa a un major ( el 1er nro )
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Para mas info leer aqui: https://www.npmjs.com/package/semantic-release
 
-### `yarn eject`
+### `yarn add -D semantic-release`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Usar estos plugins para trabajar con Semantic Versioning
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`package.json`
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+"plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+],
+```
