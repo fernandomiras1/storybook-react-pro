@@ -26,7 +26,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 18.13.0
-          registry-url: "https://registry.npmjs.org"
 
       - name: Install Dependencies
         run: yarn install
