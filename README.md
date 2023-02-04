@@ -45,4 +45,4 @@ Usar estos plugins para trabajar con Semantic Versioning
 ```
 
 TOken de github:: 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
-TOKEN_NPM: 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
+TOKEN_NPM: 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
