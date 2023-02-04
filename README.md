@@ -43,6 +43,3 @@ Usar estos plugins para trabajar con Semantic Versioning
     "@semantic-release/git"
 ],
 ```
-
-TOken de github:: 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
-TOKEN_NPM: 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
